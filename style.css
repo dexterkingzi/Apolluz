@@ -1,0 +1,377 @@
+
+:root {
+    --bg-main: #0F172A;
+    --bg-panel: #1E293B;
+    --bg-input: #0F172A;
+
+    --primary: #f79d02;
+    --primary-hover: #D97706;
+
+    --border: #334155;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+
+    --danger: #EF4444;
+    --success: #22C55E;
+
+    --radius: 10px;
+    --transition: 0.2s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cabecalho-apolluz {
+    width: 100%;
+    min-height: 140px;
+    margin-bottom: 30px;
+    padding: 20px;
+   
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    background-color: #1E293B;
+    border-bottom: 5px solid #F59E0B;
+    border-radius: 12px;
+}
+
+.logo-img {
+    display: block;
+    width: 500px;
+    height: auto;
+    max-width: 209%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 6px;
+
+    color: var(--primary);
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+
+section {
+    padding: 32px;
+
+    background-color: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgb(0 0 0 / 20%);
+}
+
+section h2 {
+    margin-bottom: 6px;
+
+    color: var(--text-primary);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+section > p {
+    margin-bottom: 28px;
+
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+#form-cliente {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 20px;
+}
+
+.campo {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo label {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#form-cliente input,
+#form-cliente select {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+#form-cliente input::placeholder {
+    color: #64748B;
+}
+
+#form-cliente select {
+    cursor: pointer;
+}
+
+#form-cliente select option {
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
+}
+
+#form-cliente input:focus,
+#form-cliente select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgb(245 158 11 / 15%);
+}
+
+#form-cliente input.invalido,
+#form-cliente select.invalido {
+    border-color: var(--danger);
+}
+
+#form-cliente input.invalido:focus,
+#form-cliente select.invalido:focus {
+    box-shadow: 0 0 0 3px rgb(239 68 68 / 15%);
+}
+
+.mensagem-erro {
+    display: block;
+    min-height: 0;
+
+    color: var(--danger);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.mensagem-erro:not(:empty) {
+    margin-top: -2px;
+}
+
+.acoes-formulario {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 6px;
+}
+
+.acoes-formulario button {
+    min-height: 46px;
+    padding: 12px 20px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.acoes-formulario button[type="submit"] {
+    flex: 1;
+
+    background-color: #F59E0B;
+    color: #0F172A;
+}
+
+.acoes-formulario button[type="submit"]:hover {
+     background-color: #E6C200;
+}
+
+.acoes-formulario button[type="reset"] {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: var(--border);
+}
+
+.acoes-formulario button[type="reset"]:hover {
+    background-color: #334155;
+}
+
+.acoes-formulario button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.area-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: min(360px, calc(100vw - 40px));
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px;
+
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
+
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--success);
+    border-radius: var(--radius);
+
+    box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+
+    animation: toast-entrar 0.3s ease;
+}
+
+.toast.erro {
+    border-left-color: var(--danger);
+}
+
+.toast .mensagem {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.toast .fechar {
+    flex-shrink: 0;
+    padding: 4px 8px;
+
+    background: transparent;
+    color: var(--text-secondary);
+
+    border: none;
+
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.toast .fechar:hover {
+    color: var(--text-primary);
+}
+
+.toast.saindo {
+    opacity: 0;
+    transform: translateX(20px);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+@keyframes toast-entrar {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    header {
+        margin-bottom: 24px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 22px 18px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    #form-cliente {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
+    }
+
+    .acoes-formulario button {
+        width: 100%;
+    }
+
+    .area-toast {
+        top: 12px;
+        right: 12px;
+        width: calc(100vw - 24px);
+    }
+}
+
+

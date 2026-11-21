@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar Cliente | Apolluz</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <div
+        id="area-toast"
+        class="area-toast"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <main>
+        
+        <header class="cabecalho-apolluz">
+            <img src="log.jpg" alt="APOLLUZ - Automação em Energia Solar" class="logo-img">
+        </header>
+
+       
+        <section>
+            <h2>Cadastrar cliente</h2>
+            <p>Preencha os dados do cliente interessado em energia solar.</p>
+
+            <form id="form-cliente" novalidate>
+
+             
+                <div class="campo">
+                    <label for="tipo-pessoa">Tipo de cliente *</label>
+
+                    <select
+                        id="tipo-pessoa"
+                        name="tipoPessoa"
+                        required
+                    >
+                        <option value="fisica">Pessoa física</option>
+                        <option value="juridica">Pessoa jurídica</option>
+                    </select>
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="nome" id="label-nome">
+                        Nome completo *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite o nome completo/Nome da empresa"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <small class="mensagem-erro"></small>
+                </div>
+               
+                <div class="campo">
+                    <label for="documento" id="label-documento">
+                        CPF *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="documento"
+                        name="documento"
+                        placeholder="000.000.000-00"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        maxlength="14"
+                        required
+                    >
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone / WhatsApp *</label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="(00) 00000-0000"
+                        autocomplete="tel"
+                        maxlength="15"
+                        required
+                    >
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail *</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="cliente@email.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+
+                <div class="campo">
+                    <label for="cidade">Cidade</label>
+
+                    <input
+                        type="text"
+                        id="cidade"
+                        name="cidade"
+                        placeholder="Digite a cidade"
+                        autocomplete="address-level2"
+                    >
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado (UF)</label>
+
+                    <select id="estado" name="estado">
+                        <option value="">Selecione o estado</option>
+                        <option value="AC">Acre (AC)</option>
+                        <option value="AL">Alagoas (AL)</option>
+                        <option value="AP">Amapá (AP)</option>
+                        <option value="AM">Amazonas (AM)</option>
+                        <option value="BA">Bahia (BA)</option>
+                        <option value="CE">Ceará (CE)</option>
+                        <option value="DF">Distrito Federal (DF)</option>
+                        <option value="ES">Espírito Santo (ES)</option>
+                        <option value="GO">Goiás (GO)</option>
+                        <option value="MA">Maranhão (MA)</option>
+                        <option value="MT">Mato Grosso (MT)</option>
+                        <option value="MS">Mato Grosso do Sul (MS)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                        <option value="PA">Pará (PA)</option>
+                        <option value="PB">Paraíba (PB)</option>
+                        <option value="PR">Paraná (PR)</option>
+                        <option value="PE">Pernambuco (PE)</option>
+                        <option value="PI">Piauí (PI)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="RN">Rio Grande do Norte (RN)</option>
+                        <option value="RS">Rio Grande do Sul (RS)</option>
+                        <option value="RO">Rondônia (RO)</option>
+                        <option value="RR">Roraima (RR)</option>
+                        <option value="SC">Santa Catarina (SC)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="SE">Sergipe (SE)</option>
+                        <option value="TO">Tocantins (TO)</option>
+                    </select>
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="consumo">Consumo mensal (kWh) *</label>
+                    <input
+                        type="number"
+                        id="consumo"
+                        name="consumo"
+                        placeholder="Ex.: 450"
+                        min="1"
+                        step="any"
+                        required
+                    >
+
+                    <small class="mensagem-erro"></small>
+                </div>
+
+                <div class="acoes-formulario">
+                    <button type="submit">Cadastrar cliente</button>
+                    <button type="reset">Limpar formulário</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
